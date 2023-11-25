@@ -21,12 +21,8 @@ db.sqlite3
 db.sqlite3-journal
 media/
 
-# Node modules and build directories
-#node_modules/
-#/static/css/dist/
-
-# Compiled static files
-#/static/css/dist/
+.theme/
+theme/
 
 # Virtual environment
 env/
