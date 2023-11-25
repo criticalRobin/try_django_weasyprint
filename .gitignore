@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Node modules and build directories
+node_modules/
+/static/css/dist/
+
+# Compiled static files
+/static/css/dist/
+
+# Virtual environment
+env/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# PyCharm project settings
+.idea/
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# TailwindCSS build output (if you're compiling the CSS outside of the project and do not need to share the builds)
+# /static/css/
+
+# If you're including builds and want everyone to have the same output, do not ignore the dist directory
+# !/static/css/dist/
