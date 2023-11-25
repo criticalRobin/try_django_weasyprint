@@ -22,11 +22,11 @@ db.sqlite3-journal
 media/
 
 # Node modules and build directories
-node_modules/
-/static/css/dist/
+#node_modules/
+#/static/css/dist/
 
 # Compiled static files
-/static/css/dist/
+#/static/css/dist/
 
 # Virtual environment
 env/
