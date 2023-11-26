@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import ChangeForm
 from .forms import ChangeFormForm
@@ -34,13 +34,17 @@ class ChangeFormCreateView(CreateView):
         return render(request, self.template_name, context)
 
 
-def form_pdf(request):
-    context = {}
-    html = render_to_string("form-pdf.html", context)
+def form_pdf(request, pk):
+    # Obtener el reporte específico usando la PK
+    form = get_object_or_404(ChangeForm, pk=pk)
 
-    response = HttpResponse(content_type="application/pdf")
-    response["Content-Disposition"] = "inline; filename=formulario_cambio.pdf"
+    # Renderizar la plantilla HTML con los datos
+    html_string = render_to_string("form-pdf.html", {"form": form})
 
-    HTML(string=html).write_pdf(response)
+    # Generar el PDF
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    result = html.write_pdf(presentational_hints=True)
 
+    response = HttpResponse(result, content_type="application/pdf;")
+    response["Content-Disposition"] = f"inline; filename=formulario_{form.pk}.pdf"
     return response
